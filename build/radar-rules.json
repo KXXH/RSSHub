@@ -1825,8 +1825,8 @@
     "_name": "不良林",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "全部文章",
+        "docs": "https://docs.rsshub.app/routes/blog",
         "source": [
           "/"
         ],
@@ -13931,6 +13931,16 @@
   "usenix.org": {
     "_name": "USENIX",
     ".": [
+      {
+        "title": ";login:",
+        "docs": "https://docs.rsshub.app/routes/journal",
+        "source": [
+          "/publications/loginonline",
+          "/publications",
+          "/"
+        ],
+        "target": "/usenix/loginonline"
+      },
       {
         "title": "Security Symposia",
         "docs": "https://docs.rsshub.app/routes/journal",
