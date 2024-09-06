@@ -13,7 +13,9 @@ const getCookie = () => {
     }
     const key = 'bili-cookie';
     return cache.tryGet(key, async () => {
-        const browser = await puppeteer();
+        const browser = await puppeteer({
+            stealth: true,
+        });
         const page = await browser.newPage();
         const waitForRequest = new Promise<string>((resolve) => {
             page.on('requestfinished', async (request) => {
@@ -27,7 +29,7 @@ const getCookie = () => {
         await page.goto('https://space.bilibili.com/1/dynamic');
         const cookieString = await waitForRequest;
         logger.debug(`Got bilibili cookie: ${cookieString}`);
-
+        await browser.close();
         return cookieString;
     });
 };
